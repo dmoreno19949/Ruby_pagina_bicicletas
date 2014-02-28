@@ -21,13 +21,16 @@
         <td><%= bike.description %></td>
         <td><%= bike.price %></td>
         <td><%= link_to 'Show', bike %></td>
+        <% if !current_user.nil? %>
         <td><%= link_to 'Edit', edit_bike_path(bike) %></td>
         <td><%= link_to 'Destroy', bike, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
+<% if !current_user.nil? %>
 <%= link_to 'New Bike', new_bike_path %>
+<% end %>

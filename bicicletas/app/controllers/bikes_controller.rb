@@ -1,4 +1,5 @@
 class BikesController < ApplicationController
+  before_action :current_user, only: [:show, :edit, :update, :destroy]
   before_action :set_bike, only: [:show, :edit, :update, :destroy]
 
   # GET /bikes
@@ -14,7 +15,12 @@ class BikesController < ApplicationController
 
   # GET /bikes/new
   def new
-    @bike = Bike.new
+@bike=Bike.new
+    if !current_user.nil?
+   
+  else
+    render text: 'no puedes crear onbjetos'
+    end 
   end
 
   # GET /bikes/1/edit
@@ -24,6 +30,8 @@ class BikesController < ApplicationController
   # POST /bikes
   # POST /bikes.json
   def create
+        if !current_user.nil?
+  
     @bike = Bike.new(bike_params)
 
     respond_to do |format|
@@ -35,6 +43,9 @@ class BikesController < ApplicationController
         format.json { render json: @bike.errors, status: :unprocessable_entity }
       end
     end
+  else
+      render text: 'que te jodan melon'
+  end
   end
 
   # PATCH/PUT /bikes/1

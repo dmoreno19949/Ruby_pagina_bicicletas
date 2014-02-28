@@ -19,14 +19,18 @@
         <td><%= brand.name %></td>
         <td><%= brand.history %></td>
         <td><%= brand.localizacion %></td>
+
         <td><%= link_to 'Show', brand %></td>
+        <% if !current_user.nil? %>
         <td><%= link_to 'Edit', edit_brand_path(brand) %></td>
         <td><%= link_to 'Destroy', brand, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
+<% if !current_user.nil? %>
 <%= link_to 'New Brand', new_brand_path %>
+<% end %>

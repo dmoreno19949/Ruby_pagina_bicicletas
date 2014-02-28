@@ -15,6 +15,8 @@
   <strong>Localizacion:</strong>
   <%= @brand.localizacion %>
 </p>
-
+<!-- con esto metes los botones que no quieras que token dentro y te saldran solo cuando estas logueado-->
+<% if !current_user.nil?%>
 <%= link_to 'Edit', edit_brand_path(@brand) %> |
+<% end %>
 <%= link_to 'Back', brands_path %>
