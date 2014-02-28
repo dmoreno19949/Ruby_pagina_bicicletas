@@ -34,5 +34,7 @@
 
 <br>
 <% if !current_user.nil? %>
+<%= link_to 'Go back',  brands_path %>
+<% end %> 
 <%= link_to 'New Bike', new_bike_path %>
-<% end %>
+<%= will_paginate @bikes %>
