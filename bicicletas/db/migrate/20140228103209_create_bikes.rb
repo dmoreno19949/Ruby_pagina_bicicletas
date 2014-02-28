@@ -4,6 +4,7 @@ class CreateBikes < ActiveRecord::Migration
       t.string :name
       t.text :description
       t.decimal :price
+      t.integer :brand_id
 
       t.timestamps
     end

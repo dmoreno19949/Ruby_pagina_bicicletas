@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(version: 20140228164021) do
     t.string   "name"
     t.text     "description"
     t.decimal  "price"
+    t.integer  "brand_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "avatar_file_name"

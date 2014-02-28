@@ -7,6 +7,7 @@
       <th>Name</th>
       <th>Description</th>
       <th>Price</th>
+      <th>Brand</th>
       <th></th>
       <th></th>
       <th></th>
@@ -20,6 +21,7 @@
         <td><%= bike.name %></td>
         <td><%= bike.description %></td>
         <td><%= bike.price %></td>
+        <td><%= bike.brand_id %></td>
         <td><%= link_to 'Show', bike %></td>
         <% if !current_user.nil? %>
         <td><%= link_to 'Edit', edit_bike_path(bike) %></td>

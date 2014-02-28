@@ -5,20 +5,27 @@ class BikesController < ApplicationController
   # GET /bikes
   # GET /bikes.json
   def index
-    @bikes = Bike.all
+    if params[:id].nil?
+      @bikes = Bike.paginate(:page => params[:page], :per_page => 2)
+    else
+      @bikes = Bike.where(:brand_id => params[:id])
+      @bikes = @bikes.paginate(:page => params[:page], :per_page => 2)
+  end
   end
 
   # GET /bikes/1
   # GET /bikes/1.json
   def show
+    #@brand = Brand.where(:id=Bike.find(params[:id]).brand_id)
+
   end
 
   # GET /bikes/new
   def new
-@bike=Bike.new
     if !current_user.nil?
-   
-  else
+       @bike=Bike.new
+      
+    else
     render text: 'no puedes crear onbjetos'
     end 
   end
@@ -42,10 +49,10 @@ class BikesController < ApplicationController
         format.html { render action: 'new' }
         format.json { render json: @bike.errors, status: :unprocessable_entity }
       end
-    end
-  else
+      end
+     else
       render text: 'que te jodan melon'
-  end
+    end
   end
 
   # PATCH/PUT /bikes/1
@@ -77,9 +84,15 @@ class BikesController < ApplicationController
     def set_bike
       @bike = Bike.find(params[:id])
     end
+    #def set_brand
+    #  @brand = Brand.find(@bike.brand_id)
+    #end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def bike_params
-      params.require(:bike).permit(:name, :description, :price, :avatar )
+      params.require(:bike).permit(:name, :description, :price, :avatar, :brand_id )
     end
+    #def brand_params
+     # params.require(:brand).permit(:id,:name)
+    #end
 end

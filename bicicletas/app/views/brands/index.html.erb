@@ -3,6 +3,7 @@
 <table>
   <thead>
     <tr>
+      <th>Image</th>
       <th>Name</th>
       <th>History</th>
       <th>Localizacion</th>
@@ -15,7 +16,7 @@
   <tbody>
     <% @brands.each do |brand| %>
       <tr>
-        <td><%= image_tag brand.logo.url(:thumb) %></td>
+        <td><%= link_to image_tag(brand.logo.url(:thumb)), :controller => "bikes" , :id => brand.id%></td>
         <td><%= brand.name %></td>
         <td><%= brand.history %></td>
         <td><%= brand.localizacion %></td>

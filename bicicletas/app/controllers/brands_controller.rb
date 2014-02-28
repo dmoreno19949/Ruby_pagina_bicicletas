@@ -6,7 +6,6 @@ class BrandsController < ApplicationController
   def index
     @brands = Brand.all
   end
-
   # GET /brands/1
   # GET /brands/1.json
   def show
@@ -69,6 +68,6 @@ class BrandsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def brand_params
-      params.require(:brand).permit(:name, :history, :localizacion, :logo)
+      params.require(:brand).permit(:id, :name, :history, :localizacion, :logo)
     end
 end

@@ -17,6 +17,11 @@
   <%= @bike.price %>
 </p>
 
+<p>
+  <strong>Brand:</strong>
+  <%= @bike.brand.name %>
+</p>
+
 <% if !current_user.nil?%>
 <%= link_to 'Edit', edit_bike_path(@bike) %> |
 <% end %>
