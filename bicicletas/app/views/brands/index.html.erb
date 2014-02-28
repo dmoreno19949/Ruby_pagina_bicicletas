@@ -15,6 +15,7 @@
   <tbody>
     <% @brands.each do |brand| %>
       <tr>
+        <td><%= image_tag brand.logo.url(:thumb) %></td>
         <td><%= brand.name %></td>
         <td><%= brand.history %></td>
         <td><%= brand.localizacion %></td>

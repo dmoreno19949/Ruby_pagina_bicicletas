@@ -3,6 +3,7 @@
 <table>
   <thead>
     <tr>
+      <th>Image</th>
       <th>Name</th>
       <th>Description</th>
       <th>Price</th>
@@ -15,6 +16,7 @@
   <tbody>
     <% @bikes.each do |bike| %>
       <tr>
+        <td><%= image_tag bike.avatar.url(:thumb) %></td>
         <td><%= bike.name %></td>
         <td><%= bike.description %></td>
         <td><%= bike.price %></td>
