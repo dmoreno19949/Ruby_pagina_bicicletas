@@ -6,10 +6,10 @@ class BikesController < ApplicationController
   # GET /bikes.json
   def index
     if params[:id].nil?
-      @bikes = Bike.paginate(:page => params[:page], :per_page => 15)
+      @bikes = Bike.paginate(:page => params[:page], :per_page => 2)
     else
       @bikes = Bike.where(:brand_id => params[:id])
-      @bikes = @bikes.paginate(:page => params[:page], :per_page => 5)
+      @bikes = @bikes.paginate(:page => params[:page], :per_page => 2)
   end
   end
 

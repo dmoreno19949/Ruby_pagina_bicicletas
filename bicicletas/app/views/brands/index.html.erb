@@ -1,38 +1,32 @@
-<h1>Listing brands</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Image</th>
-      <th>Name</th>
-      <th>History</th>
-      <th>Localizacion</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
+  <tbody id="marcas">
     <% @brands.each do |brand| %>
-      <tr>
-        <td><%= link_to image_tag(brand.logo.url(:thumb)), :controller => "bikes" , :id => brand.id%></td>
-        <td><%= brand.name %></td>
-        <td><%= brand.history %></td>
-        <td><%= brand.localizacion %></td>
+    <div id="general">
 
-        <td><%= link_to 'Show', brand %></td>
-        <% if !current_user.nil? %>
-        <td><%= link_to 'Edit', edit_brand_path(brand) %></td>
-        <td><%= link_to 'Destroy', brand, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <% end %>
-      </tr>
+      <div id="contenedor">
+
+          <div id="image"><%= link_to image_tag(brand.logo.url(:thumb)), :controller => "bikes" , :id => brand.id%></div>
+          <div id="name"><%= brand.name %></div>
+          <div id="history"><%= brand.history %></div>
+          <div id="localitation"><%= brand.localizacion %></div>
+      </div>
+
+      <div id="confirm">
+            <%= link_to 'Show', brand %>
+          <% if !current_user.nil? %>
+            <%= link_to 'Edit', edit_brand_path(brand) %>
+            <%= link_to 'Destroy', brand, method: :delete, data: { confirm: 'Are you sure?' } %>
+          <% end %>
+      </div>
+
+    </div>
     <% end %>
   </tbody>
-</table>
+
+
 
 <br>
 <% if !current_user.nil? %>
 <%= link_to 'New Brand', new_brand_path %>
+<%= will_paginate @bikes %>
 <% end %>
 

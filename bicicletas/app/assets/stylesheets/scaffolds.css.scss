@@ -1,3 +1,6 @@
+
+
+
 body {
   background-color: #fff;
   color: #333;
@@ -65,5 +68,35 @@ div {
   ul li {
     font-size: 12px;
     list-style: square;
+  }
+}
+
+ #general{
+  height: 1000px;
+  width: 90%;
+  border:solid 1px black;
+  margin: auto;
+  box-shadow: 2px 2px 2px black;
+ }
+
+ #user_nav{
+  text-align: right;
+ }
+
+ #head{
+  width: 100%;
+  height: 30px;
+  border: solid 1px black;
+    li {
+    border: solid 1px black;
+    margin: 0% 1% 0% 1%;
+    width: 30%;
+    height: 100%;
+    font-size: 12px;
+    list-style: none;
+    float: left;
+    text-align: center;
+
+
   }
 }

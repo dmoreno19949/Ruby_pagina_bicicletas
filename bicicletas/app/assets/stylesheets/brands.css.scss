@@ -1,3 +1,39 @@
 // Place all the styles related to the brands controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#general{
+		width: 60%;
+		height: 300px;
+	border: solid red 10px;
+}
+#contenedor{
+	width: 40%;
+	height: 250px;
+	border: solid blue 1px;
+	float :left;
+	margin: 2.5% 2.5% 2.5% 2.5%;
+	padding: 2% 2% 2% 2%;
+
+	#image{
+		width: 45%;
+		border: solid black 1px;
+		display: inline;
+		float: left;
+	}
+	#name{
+	width: 45%;
+	border: solid black 1px;
+	}
+	#history{
+	border: solid black 1px;
+	}
+	#localitation{
+	border: solid black 1px;
+	}
+}
+
+#confirm{
+	width: 40%;
+	border: solid black 1px;
+}
