@@ -7,6 +7,15 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<div id="head">
+  <%= link_to 'Home', page_home_path%>
+  <%= link_to 'Brands', brands_path%>
+  <%= link_to 'Home', page_about_path%>
+</div>
+
+
+
+
 <div id="user_nav">
   <% if user_signed_in? %>
     Signed in as <%= current_user.email %>. Not you?
