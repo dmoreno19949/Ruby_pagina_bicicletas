@@ -13,5 +13,5 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require jquery.rambling.slider
 //= require_tree .
-# require nivo
