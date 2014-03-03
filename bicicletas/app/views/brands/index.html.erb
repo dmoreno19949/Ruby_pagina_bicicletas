@@ -1,25 +1,23 @@
   <tbody id="marcas">
+    <h3>Bienbenido a nuestro catalogo de marcas. </h1>
+    <div id="general_brand">
     <% @brands.each do |brand| %>
-    <div id="general">
 
-      <div id="contenedor">
+      <div id="marcas_contenedor">
+        <div id="contenedor">
+            <div id="image"><%= link_to image_tag(brand.logo.url(:thumb)), :controller => "bikes" , :id => brand.id%></div>
+        </div>
 
-          <div id="image"><%= link_to image_tag(brand.logo.url(:thumb)), :controller => "bikes" , :id => brand.id%></div>
-          <div id="name"><%= brand.name %></div>
-          <div id="history"><%= brand.history %></div>
-          <div id="localitation"><%= brand.localizacion %></div>
+        <div id="confirm">
+              <%= link_to '¿Que Marca es?', brand %>
+            <% if !current_user.nil? %>
+              <%= link_to 'Edit', edit_brand_path(brand) %>
+              <%= link_to 'Destroy', brand, method: :delete, data: { confirm: 'Are you sure?' } %>
+            <% end %>
+        </div>
       </div>
-
-      <div id="confirm">
-            <%= link_to 'Show', brand %>
-          <% if !current_user.nil? %>
-            <%= link_to 'Edit', edit_brand_path(brand) %>
-            <%= link_to 'Destroy', brand, method: :delete, data: { confirm: 'Are you sure?' } %>
-          <% end %>
-      </div>
-
+    <% end %> 
     </div>
-    <% end %>
   </tbody>
 
 
