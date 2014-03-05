@@ -73,7 +73,6 @@ div {
 }
 
  #general{
-  height: 1000px;
   width: 90%;
   margin: auto;
   box-shadow: 5px 5px 7px #999;
@@ -120,8 +119,9 @@ div {
 #cmsContain header.title h1 {
     text-transform: uppercase;
     font-size: 100px;
-    color: rgb(119, 187, 0);
+    color: white;
     letter-spacing: -4px;
+      padding-left: 10px;
 }
 .tgc {
     font-family: 'Trade Gothic W01 Cn 18';
@@ -137,7 +137,9 @@ header.leftHead {
     padding-right: 20px;
 }
 header.leftHead h2 {
+  padding-left: 10px;
     margin-bottom: 20px;
+        color: white;
 }
 .safetyContent {
     padding-left: 20px;
@@ -145,6 +147,7 @@ header.leftHead h2 {
     width: 430px;
 }
 .safetyBlock p, p.required {
+      padding-right:  20px;
     padding-bottom: 10px;
     color: rgb(119, 119, 119);
     font-size: 13px;

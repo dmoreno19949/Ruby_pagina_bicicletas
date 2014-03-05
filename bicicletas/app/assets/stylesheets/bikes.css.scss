@@ -14,19 +14,22 @@ tbody{
 	background: white;
 
 	#image{
-		width: 450px;	
-		display: inline-block;
-				border: 1px solid black;	
+		margin-left: 20%;	
+		margin-top: 20px;	
 	}
 	#name{
-		border: 1px solid white;	
+		font-size: 24pt;
+		font-weight: bold;	
+		padding: 10px 10px 10px 10px;
 	}
 	#description{
-		border: 1px solid white;	
+		padding: 10px 10px 10px 10px;	
 	}
 	#price{
-		width: 75px;
-		border: 1px solid black;	
-				display: inline-block;
+		padding-top: 10px;
+		padding-right: 10px;
+		text-align: right;	
+		font-size: 16pt;
+		font-weight: bold;
 	}
 }
