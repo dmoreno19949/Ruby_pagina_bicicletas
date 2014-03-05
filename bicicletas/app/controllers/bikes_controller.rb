@@ -26,7 +26,7 @@ class BikesController < ApplicationController
        @bike=Bike.new
       
     else
-    render text: 'no puedes crear onbjetos'
+    render text: 'Usted tiene que registrarse para acceder a este campo'
     end 
   end
 
