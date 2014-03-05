@@ -14,7 +14,9 @@ tbody{
 	background: white;
 
 	#image{
-		margin: auto;	
+		width: 450px;	
+		display: inline-block;
+				border: 1px solid black;	
 	}
 	#name{
 		border: 1px solid white;	
@@ -23,6 +25,8 @@ tbody{
 		border: 1px solid white;	
 	}
 	#price{
-		border: 1px solid white;	
+		width: 75px;
+		border: 1px solid black;	
+				display: inline-block;
 	}
 }
